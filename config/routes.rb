@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/employees' => 'employees#index'
   namespace :api do
     namespace :v1 do
       get '/employees' => 'employees#index'

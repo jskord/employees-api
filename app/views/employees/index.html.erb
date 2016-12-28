@@ -1,0 +1,24 @@
+
+<h1>Employees</h1>
+
+<div ng-app="app">
+  <div ng-controller="employeeCtrl" ng-init="setup()">
+      <table style = "width:100%">
+        <tr>
+          <th ng-click="changeOrderAttribute('first_name')">First Name</th>
+          <th ng-click="changeOrderAttribute('last_name')">Last Name</th>
+          <th ng-click="changeOrderAttribute('birth_date')">Birthdate</th>
+          <th ng-click="changeOrderAttribute('email')">email</th>
+          <th ng-click="changeOrderAttribute('ssn')">SSN</th>
+        </tr>
+        <tr ng-repeat="employee in employees | filter: {first_name: firstNameFilter} | orderBy:orderAttribute:isOrderDescending">
+          <td> {{ employee.first_name }} </td>
+          <td> {{ employee.last_name }} </td>
+          <td> {{ employee.birth_date }} </td>
+          <td> {{ employee.email }} </td>
+          <td> {{ employee.ssn }} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
